@@ -12,6 +12,9 @@ function book(title, author, pageNumber, read) {
   };
 }
 
+
+myLibrary.forEach((book) => console.log(book));
+
 function addBookToLibrary() {
   // do stuff here
 }
