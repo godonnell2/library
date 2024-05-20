@@ -1,8 +1,8 @@
-const myLibrary = ["Test Title, Test Author, test no, read", "this is my book, grace o donnell, 753, read," "I am the best, Gracey bee, 673, read"];
+const myLibrary = [];
 
 // the constructor...
 
-function book(title, author, pageNumber, read) {
+function Book(title, author, pageNumber, read) {
   this.title = title;
   this.author = author;
   this.pageNumber = pageNumber;
@@ -12,8 +12,12 @@ function book(title, author, pageNumber, read) {
   };
 }
 
+const book1 = new Book("I am the Best", "Grace O Donnell", 42, true);
+myLibrary.push(book1);
+myLibrary.push(new Book("This is not my Voice on TV", "JT", 51, true));
 
 myLibrary.forEach((book) => console.log(book));
+myLibrary.forEach((book) => console.log(book.info()));
 
 function addBookToLibrary() {
   // do stuff here
