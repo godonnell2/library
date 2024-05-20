@@ -1,4 +1,4 @@
-const myLibrary = [];
+const myLibrary = ["Test Title, Test Author, test no, read", "this is my book, grace o donnell, 753, read," "I am the best, Gracey bee, 673, read"];
 
 // the constructor...
 
