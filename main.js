@@ -1,5 +1,9 @@
 const myLibrary = [];
 
+
+const submitButton = document.querySelector(#submitButton);
+console.log(submitButton);
+
 // the constructor...
 
 function Book(title, author, pageNumber, read) {
