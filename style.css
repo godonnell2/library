@@ -20,7 +20,7 @@ label {
 }
 
 /* Style the submit button */
-input[type="submit"] {
+#submitButton {
   background-color: #04aa6d;
   color: white;
   padding: 12px 20px;
