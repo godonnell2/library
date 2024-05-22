@@ -1,10 +1,19 @@
 const myLibrary = [];
 
+const submitButton = document.querySelector("#submitButton");
+const addBookForm = document.querySelector("#addBookForm");
 
-const submitButton = document.querySelector(#submitButton);
-console.log(submitButton);
-
-// the constructor...
+submitButton.addEventListener("click", function () {
+  console.log(addBookForm.elements);
+  const title = addBookForm.elements["title"].value;
+  const author = addBookForm.elements["authorName"].value;
+  const pageNumber = addBookForm.elements["pageNumber"].value;
+  const read = addBookForm.elements["read"].checked;
+  const bookTest = new Book(title, author, pageNumber, read);
+  // if empty any field give error message
+  // if not number give error message (called validate form)
+  myLibrary.push(bookTest);
+});
 
 function Book(title, author, pageNumber, read) {
   this.title = title;

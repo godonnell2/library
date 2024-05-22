@@ -9,7 +9,7 @@
   </head>
   <body>
     <div class="container">
-      <form>
+      <form id="addBookForm">
         <div class="row">
           <div class="col-25">
             <label for="title">Book Title</label>
@@ -54,18 +54,17 @@
             <label for="subject">Have you read the book?</label>
           </div>
           <div class="col-75">
-            <input type="checkbox" id="coding" name="interest" value="coding" />
-            <label for="coding">Coding</label>
-</div>
-          </div>
+            <input type="checkbox" id="read" name="read"  />
+            <label for="read">Read</label>
         </div>
+      
         <div class="row">
           <button type="button" id = "submitButton">
             Submit New Book
           </button>
         </div>
       </form>
-    </div>
+  
 
     <table>
       <thead>
