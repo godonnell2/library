@@ -10,11 +10,12 @@ submitButton.addEventListener("click", function () {
   const pageNumber = addBookForm.elements["pageNumber"].value;
   const read = addBookForm.elements["read"].checked;
   const bookTest = new Book(title, author, pageNumber, read);
+  console.log(bookTest);
   // if empty any field give error message
   // if not number give error message (called validate form)
   myLibrary.push(bookTest);
+  renderBooks();
 });
-addBookForm.elements["title"].value;
 
 function Book(title, author, pageNumber, read) {
   this.title = title;
@@ -33,19 +34,23 @@ myLibrary.push(new Book("This is not my Voice on TV", "JT", 51, false));
 myLibrary.forEach((book) => console.log(book));
 myLibrary.forEach((book) => console.log(book.info()));
 
-function addBookToLibrary() {
-  // do stuff here
-}
-
 const tbody = document.querySelector("tbody");
 const template = document.querySelector("#bookrow");
 
-myLibrary.forEach((b) => {
-  const clone = template.content.cloneNode(true);
-  let td = clone.querySelectorAll("td");
-  td[0].textContent = b.title;
-  td[1].textContent = b.author;
-  td[2].textContent = b.pageNumber;
-  td[3].textContent = b.read ? "Read" : "Not read";
-  tbody.appendChild(clone);
-});
+// create a function convert this function to a ma
+// p and store that to a variable
+// after the result of the map function should be
+// passed to tbody.replacechildren(clones)
+function renderBooks() {
+  const myRenderedBooks = myLibrary.map((b) => {
+    const clone = template.content.cloneNode(true);
+    let td = clone.querySelectorAll("td");
+    td[0].textContent = b.title;
+    td[1].textContent = b.author;
+    td[2].textContent = b.pageNumber;
+    td[3].textContent = b.read ? "Read" : "Not read";
+    return clone;
+  });
+  tbody.replaceChildren(...myRenderedBooks);
+}
+renderBooks();
