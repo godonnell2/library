@@ -42,13 +42,19 @@ const template = document.querySelector("#bookrow");
 // after the result of the map function should be
 // passed to tbody.replacechildren(clones)
 function renderBooks() {
-  const myRenderedBooks = myLibrary.map((b) => {
+  const myRenderedBooks = myLibrary.map((b, index) => {
     const clone = template.content.cloneNode(true);
     let td = clone.querySelectorAll("td");
     td[0].textContent = b.title;
     td[1].textContent = b.author;
     td[2].textContent = b.pageNumber;
     td[3].textContent = b.read ? "Read" : "Not read";
+    const button = clone.querySelector("button");
+    button.addEventListener("click", () => {
+      console.log("Delete", index);
+      myLibrary.splice(index, 1);
+      renderBooks();
+    });
     return clone;
   });
   tbody.replaceChildren(...myRenderedBooks);
