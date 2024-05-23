@@ -49,6 +49,11 @@ function renderBooks() {
     td[1].textContent = b.author;
     td[2].textContent = b.pageNumber;
     td[3].textContent = b.read ? "Read" : "Not read";
+    const toggleButton = clone.querySelector(".switch input");
+    toggleButton.checked = b.read;
+    toggleButton.addEventListener("input", () => {
+      console.log("checked");
+    });
     const button = clone.querySelector("button");
     button.addEventListener("click", () => {
       console.log("Delete", index);
