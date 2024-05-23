@@ -14,6 +14,7 @@ submitButton.addEventListener("click", function () {
   // if not number give error message (called validate form)
   myLibrary.push(bookTest);
 });
+addBookForm.elements["title"].value;
 
 function Book(title, author, pageNumber, read) {
   this.title = title;
